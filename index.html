@@ -2,7 +2,32 @@
 <html>
 	<head>
 		<title>Unit 1 - Day 1 - Image Gallery in HTML</title>
-		<link href="stylesheet.css" rel="stylesheet" />
+		<!-- <link href="stylesheet.css" rel="stylesheet" /> -->
+		<style type="text/css">
+			body {
+				background-color: #222;
+				color: #ddd;
+				margin-top: 20px;
+			}
+
+			.thumbnails img {
+				height: 80px;
+				border: 4px solid #555;
+				/*width: 80px;*/
+				margin: 0 10px 10px 0;
+			}
+
+			.thumbnails img:hover {  /*hover is a pseudo class */
+				border: 4px solid #0cf;
+				cursor: pointer;
+			}
+
+			.gallery, .preview {  /* the comma means gallery AND preview*/
+				text-align: center;
+			}
+
+
+		</style>
 	</head>
 	<body>
 	<!-- Create a wrapper div. Everything on the page will be inside of this -->
@@ -10,15 +35,18 @@
 			<h2>Unit 1 - Day 1 - My first project</h2>
 			<!-- Let's make a new line with the br tag -->
 			<br />
+			<!-- The images in our thumbnail section -->
 			<div class="thumbnails">
-				<img src="images/image1.jpg">
-				<img src="images/image2.jpg">
-				<img src="images/image3.jpg">
-				<img src="images/image4.jpg">
-				<img src="images/image5.jpg">
-
+																<!-- Use inline javascript -->
+				<img src="images/image1.jpg" name="img1" onclick="preview.src=img1.src">
+				<img src="images/image2.jpg" name="img2" onclick="preview.src=img2.src">
+				<img src="images/image3.jpg" name="img3" onclick="preview.src=img3.src">
+				<img src="images/image4.jpg" name="img4" onclick="preview.src=img4.src">
+				<img src="images/image5.jpg" name="img5" onclick="preview.src=img5.src">
 			</div>
-
+			<div class="preview">
+				<img name="preview" src="images/image1.jpg">
+			</div>
 		</div>
 	</body>
 </html>
